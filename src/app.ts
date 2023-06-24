@@ -93,6 +93,7 @@ app.get('/sendEmail', async (req: Request, res: Response, next: NextFunction) =>
 // login user
 
 
+app.use(express.json());
 
 app.use('/', router)
 
