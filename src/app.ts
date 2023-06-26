@@ -15,9 +15,15 @@ import { connectNodeDatabase } from "../src/Database/ConnectDatabase"
 
 import router from '../src/Routes/routes'
 
+import bodyParser from 'body-parser';
 
+import path from 'path'
 
+app.use(bodyParser.json(),bodyParser.urlencoded({extended:false}))
 
+app.set("views", path.join(__dirname, "public"))
+
+app.set('views-engine', "ejs")
 
 const eventBroker = new EventEmitter();
 
